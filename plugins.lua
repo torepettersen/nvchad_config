@@ -148,6 +148,17 @@ local plugins = {
       })
     end,
   },
+  {
+    "elixir-tools/elixir-tools.nvim",
+    version = "*",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      require("custom.configs.elixir").setup()
+    end,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
   { "NvChad/nvterm", enabled = false },
   { "nvim-tree/nvim-tree.lua", enabled = false },
 }

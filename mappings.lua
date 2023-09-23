@@ -20,31 +20,24 @@ M.general = {
 
 M.telescope = {
   n = {
-    ["<leader>f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
-    ["<leader>g"] = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
+    ["<leader>f"] = { "<cmd>Telescope find_files<cr>", "Find files" },
+    ["<leader>g"] = { "<cmd>Telescope live_grep<cr>", "Live grep" },
   },
 }
 
 M.toggleterm = {
   n = {
-    ["<C-t>"] = { "<cmd>ToggleTerm<cr>", "Toggle Terminal" },
-    ["<leader>tt"] = {
-      function()
-        local row = table.unpack(vim.api.nvim_win_get_cursor(0))
-        require("toggleterm").exec("mix test " .. vim.fn.expand "%" .. ":" .. row)
-      end,
-      "Run in terminal",
-    },
+    ["<C-t>"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
   },
   t = {
-    ["<C-t>"] = { "<cmd>ToggleTerm<cr>", "Toggle Terminal" },
+    ["<C-t>"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
   },
 }
 
 M.neotree = {
   n = {
-    ["<leader>e"] = { "<cmd>Neotree float %:./ %:p<cr>", "Open Explorer" },
-    ["<leader>be"] = { "<cmd>Neotree float buffers<cr>", "Buffer Explorer" },
+    ["<leader>e"] = { "<cmd>Neotree float %:./ %:p<cr>", "Open explorer" },
+    ["<leader>be"] = { "<cmd>Neotree float buffers<cr>", "Buffer explorer" },
   },
 }
 
@@ -54,25 +47,25 @@ M.neotest = {
       function()
         require("neotest").run.run()
       end,
-      "Run Nearest",
+      "Run nearest",
     },
     ["<leader>tf"] = {
       function()
         require("neotest").run.run(vim.fn.expand "%")
       end,
-      "Run File",
+      "Run file",
     },
     ["<leader>ts"] = {
       function()
         require("neotest").summary.toggle()
       end,
-      "Toggle Summary",
+      "Toggle summary",
     },
     ["<leader>to"] = {
       function()
         require("neotest").output.open { enter = true }
       end,
-      "Show Output",
+      "Show output",
     },
     ["<leader>th"] = {
       function()
@@ -85,7 +78,21 @@ M.neotest = {
 
 M.projectionist = {
   n = {
-    ["<leader>a"] = { "<cmd>A<cr>", "Alternate File" },
+    ["<leader>a"] = { "<cmd>A<cr>", "Alternate file" },
+  },
+}
+
+M.elixir = {
+  plugin = true,
+
+  n = {
+    ["<leader>tt"] = {
+      function()
+        local row = table.unpack(vim.api.nvim_win_get_cursor(0))
+        require("toggleterm").exec("mix test " .. vim.fn.expand "%" .. ":" .. row)
+      end,
+      "Run in terminal",
+    },
   },
 }
 
@@ -94,6 +101,7 @@ M.diabeled = {
     ["<A-h>"] = { "" },
     ["<A-i>"] = { "" },
     ["<A-v>"] = { "" },
+    ["<leader>b"] = { "" },
     ["<leader>fa"] = { "" },
     ["<leader>fb"] = { "" },
     ["<leader>ff"] = { "" },
@@ -103,6 +111,8 @@ M.diabeled = {
     ["<leader>fw"] = { "" },
     ["<leader>fz"] = { "" },
     ["<leader>h"] = { "" },
+    ["<leader>n"] = { "" },
+    ["<leader>td"] = { "" },
     ["<leader>v"] = { "" },
   },
   t = {
