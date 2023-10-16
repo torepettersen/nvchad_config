@@ -103,7 +103,7 @@ local plugins = {
   },
   {
     "tpope/vim-projectionist",
-    lazy = false,
+    event = "VeryLazy",
     config = function()
       vim.api.nvim_set_var("projectionist_heuristics", {
         ["mix.exs|lib/*.ex"] = {
@@ -157,6 +157,13 @@ local plugins = {
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
+  },
+  {
+    "ggandor/leap.nvim",
+    event = "VeryLazy",
+    config = function ()
+      require('leap').add_default_mappings()
+    end
   },
   { "NvChad/nvterm", enabled = false },
   { "nvim-tree/nvim-tree.lua", enabled = false },
