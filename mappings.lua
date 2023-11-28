@@ -21,7 +21,7 @@ M.general = {
 M.telescope = {
   n = {
     ["<leader>f"] = { "<cmd>Telescope find_files<cr>", "Find files" },
-    ["<leader>g"] = { "<cmd>Telescope live_grep<cr>", "Live grep" },
+    ["<leader>l"] = { "<cmd>Telescope live_grep<cr>", "Live grep" },
   },
 }
 
