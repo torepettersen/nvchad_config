@@ -28,6 +28,12 @@ M.telescope = {
 M.toggleterm = {
   n = {
     ["<C-t>"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
+    ["<leader>gl"] = {
+      function ()
+        require("lazygit").toggle()
+      end,
+      "Lazygit"
+    },
   },
   t = {
     ["<C-t>"] = { "<cmd>ToggleTerm<cr>", "Toggle terminal" },
