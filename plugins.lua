@@ -5,6 +5,7 @@ local plugins = {
       ensure_installed = {
         "lua",
         "elixir",
+        "heex",
       },
     },
   },
@@ -14,6 +15,8 @@ local plugins = {
       ensure_installed = {
         "lua_ls",
         "stylua",
+        "typescript-language-server",
+        "prettier",
       },
     },
   },
@@ -65,6 +68,11 @@ local plugins = {
     },
     config = function()
       require("neo-tree").setup {
+        filesystem = {
+          filtered_items = {
+            visible = true,
+          },
+        },
         window = {
           mappings = {
             ["<Tab>"] = "next_source",
@@ -161,11 +169,14 @@ local plugins = {
   {
     "ggandor/leap.nvim",
     event = "VeryLazy",
-    config = function ()
-      require('leap').add_default_mappings()
-    end
+    config = function()
+      require("leap").add_default_mappings()
+    end,
+    dependencies = {
+      "tpope/vim-repeat",
+    },
   },
-  { "NvChad/nvterm", enabled = false },
+  { "NvChad/nvterm",           enabled = false },
   { "nvim-tree/nvim-tree.lua", enabled = false },
 }
 

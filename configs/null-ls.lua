@@ -6,9 +6,7 @@ local lint = null_ls.builtins.diagnostics
 local sources = {
   formatting.stylua,
   formatting.mix,
-
-  lint.credo,
-  lint.shellcheck,
+  formatting.prettier,
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
